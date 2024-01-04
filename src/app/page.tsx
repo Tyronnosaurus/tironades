@@ -11,8 +11,9 @@ export default function Home() {
   return (
     <main className="">
 
-      <div className="flex flex-col align-middle
-                      md:flex-row justify-center items-center">
+      <div className="flex justify-center
+                      flex-col lg:flex-row
+                      items-center lg:items-start">
         
         <Image
           src="/imatge_portada.webp"
@@ -21,7 +22,7 @@ export default function Home() {
           height="568"
         />
 
-        <div className='mt-10 mb-20 md:ml-20'>
+        <div className='mt-10 lg:mt-0 lg:ml-20 mb-20'>
           <FileBrowser json={json} />
         </div>
 
