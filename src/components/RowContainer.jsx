@@ -1,24 +1,28 @@
 import Link from "next/link";
-import { FcFolder, FcFile } from "react-icons/fc";
-
+import { FcFolder } from "react-icons/fc";
+import { FaFilePdf } from "react-icons/fa6";
 
 const RowContainer = ({ type, name, parentPath, handleClick }) => {
     return (
-        <div className='flex align-middle p-1 m-0 h-min-[4rem] cursor-pointer'
+        <div className='flex flex-row pb-2 cursor-pointer items-baseline'
              onClick={handleClick ? handleClick : null}>
 
 
             {type === 'folder' ?
                 <>
-                    <FcFolder />
-                    <div className='ml-[0.5rem]'>
+                    <div>
+                        <FcFolder size={16}/>
+                    </div>
+                    <div className='ml-1'>
                         {name}
                     </div>
                 </>
                 :
                 <>
-                    <FcFile />
-                    <div className='ml-[0.5rem]'>
+                    <div>
+                        <FaFilePdf color="red" opacity="60%" size={16}/>
+                    </div>
+                    <div className='ml-1'>
                         <Link href={`${parentPath}/${name}`} target="_blank">{name}</Link>
                     </div>
                 </>

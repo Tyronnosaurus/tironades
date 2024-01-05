@@ -6,10 +6,10 @@ import RowContainer from './RowContainer';
 
 const FolderTree = ({ json, parentPath }) => {
 
-    const [expand, setExpand] = useState(false);
+    const [expanded, setExpanded] = useState(false);
 
     const handleClick = () => {
-        setExpand(!expand);
+        setExpanded(!expanded);
     }
     
 
@@ -18,9 +18,9 @@ const FolderTree = ({ json, parentPath }) => {
             <div className='pl-3'>
                 <RowContainer type={'folder'} name={json.name} handleClick={handleClick} />
 
-                <div style={{ display: expand ? 'block' : 'none' }}>
+                <div style={{ display: expanded ? 'block' : 'none' }}>
                     {json.items.map(item => {
-                        return <FolderTree key={item.name} json={item} parentPath={parentPath + "/" + json.name} />
+                        return(<FolderTree key={item.name} json={item} parentPath={parentPath + "/" + json.name}/>)
                     })}
                 </div>
             </div>
