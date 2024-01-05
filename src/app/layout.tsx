@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+
+import Header from '@/components/Header'
 import Footer from "@/components/Footer"
 
 
@@ -20,13 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} flex flex-col min-h-[100vh]`}>
 
-        <header>
-          <h1 className="text-center text-4xl md:text-5xl font-bold m-8">Tironades</h1>
-          <div className="m-auto w-[50%]">
-            <h2 className="text-center text-1xl md:text-2xl mt-8">40 anys d&apos;activitats pioneres al massís del Port i serres veïnes</h2>
-            <h2 className="text-right text-1xl md:text-2xl mb-8">- Joan Tiron i companys -</h2>
-          </div>
-        </header>
+        <Header/>
 
         <div className="grow">
           {children}
