@@ -18,7 +18,7 @@ const FolderTree = ({ json, parentPath }) => {
             <div className='pl-3'>
                 <RowContainer type={'folder'} name={json.name} handleClick={handleClick} />
 
-                <div style={{ display: expanded ? 'block' : 'none' }}>
+                <div className={`${expanded ? 'block' : 'hidden'}`}>
                     {json.items.map(item => {
                         return(<FolderTree key={item.name} json={item} parentPath={parentPath + "/" + json.name}/>)
                     })}
